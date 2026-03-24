@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #5f9cff, #8e44ad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    width: 380px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-section button {
+    padding: 10px 15px;
+    border: none;
+    background: #bbb;
+    color: white;
+    border-radius: 8px;
+    cursor: not-allowed;
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-list li {
+    background: #f4f6ff;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.todo-list li:hover {
+    transform: translateX(5px);
+}
+
+.todo-list input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox */
+.todo-list label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: block;
+}
+
+/* Circle */
+.todo-list label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #5f9cff;
+    border-radius: 50%;
+}
+
+/* Checked state */
+.todo-list input:checked + label::before {
+    background: #5f9cff;
+}
+
+/* Text style when checked */
+.todo-list input:checked + label {
+    text-decoration: line-through;
+    color: gray;
+}
